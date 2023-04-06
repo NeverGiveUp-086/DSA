@@ -1,4 +1,4 @@
-//User function Template for C++
+//GFG
 
 class Solution
 {
