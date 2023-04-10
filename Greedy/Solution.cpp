@@ -13,5 +13,17 @@
   5.  Reverse words in a given string //gfg
      https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1
 
-  6. 
+  6. Huffman Encoding //gfg
+     https://practice.geeksforgeeks.org/problems/huffman-encoding3345/1
+
+  7. Activity Selection //gfg
+     https://practice.geeksforgeeks.org/problems/activity-selection-1587115620/1
+  
+   8. Fractional Knapsack //gfg
+      https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
+
+   9. Job Sequencing Problem  //gfg
+       https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
+   
+   10. 
      
