@@ -19,10 +19,16 @@ class Solution
         // function by decreasing the length of s2 by 1 and take the full length of s1;
         return max(lcs(x-1,y,s1,s2),lcs(x,y-1,s1,s2));
     }
+    int longestCommonSubsequence(string t1, string t2) {
+        int n=t1.size();
+        int m=t2.size();
+
+        return lcs(n,m,t1,t2);
+    }
 };
 
-//Dynamic programming 
 
+//Dynamic programming 
 class Solution
 {
     public:
@@ -47,5 +53,33 @@ class Solution
             }
         }
         return dp[x][y];
+    }
+};
+
+
+
+#memoization 
+class Solution {
+public:
+
+  int solve(string & t1, string & t2,int n,int m, int  dp[1001][1001]){
+      if(n==0 || m==0 )
+      return 0;
+
+      if(dp[n][m]!=-1)
+      return dp[n][m];
+
+      if(t1[n-1]==t2[m-1])
+      return dp[n][m]=1+solve(t1,t2,n-1,m-1,dp);
+
+      else
+      return dp[n][m]=max(solve(t1,t2,n-1,m,dp),solve(t1,t2,n,m-1,dp));
+  }
+    int longestCommonSubsequence(string t1, string t2) {
+        int static dp[1001][1001];
+        memset(dp,-1,sizeof(dp));
+            int n1=t1.size();
+            int n2=t2.size();
+        return solve(t1,t2,n1,n2,dp);
     }
 };
