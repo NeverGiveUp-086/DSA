@@ -108,3 +108,49 @@ class Solution
     }
 };
 
+
+
+#memozation + binary search
+
+class Solution {
+public:
+ int memo[101][10001];
+    //Time: O(n*k*logn), Space: O(n*k)
+    int helper(int k, int n){
+        if(n == 0 || n == 1) return n;
+        if(k == 1) return n;
+        
+        if(memo[k][n] != -1) 
+        return memo[k][n];
+        
+        int mn = INT_MAX, low = 0, high = n, temp = 0;
+        
+        while(low<=high){
+            
+            int mid = (low + high)/2;
+            
+            
+            
+            int left = helper(k-1, mid-1);
+            int right = helper(k, n-mid);
+            
+            temp = 1 + max(left, right);
+            
+            
+            if(left < right) 
+                low = mid+1;
+            else 
+                high = mid-1;     //move to the downward
+    
+            mn = min(mn, temp); //minimum number of attempts
+        }
+        return memo[k][n] = mn;
+    }
+    
+    int superEggDrop(int k, int n) {
+        //k means number of eggs, n means number of floors
+      
+        memset(memo,-1,sizeof(memo));
+        return helper(k, n);
+    }
+};
