@@ -1,4 +1,5 @@
-/
+// gfg
+// dfs
 class Solution {
   public:
     // Function to detect cycle in a directed graph.
@@ -30,4 +31,10 @@ class Solution {
         return false;
     }
 };
+
+
+// bfs
+this solution for bfs is based on the khans  algo 
+
+
 
